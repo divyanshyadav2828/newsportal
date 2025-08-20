@@ -31,7 +31,7 @@ const myGlobe = Globe()
       return;
     }
     const continentName = d.CONTINENT.toLowerCase().replace(/ /g, '-');
-    const newUrl = `http://localhost:3000/${continentName}/`;
+    const newUrl = `https://globalportal.vercel.app/${continentName}/`;
     window.location.href = newUrl;
   });
 
