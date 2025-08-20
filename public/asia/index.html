@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asia News - News Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body data-continent="asia">
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="/" class="nav__logo"><i class="ri-newspaper-line"></i> News Portal</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link dropdown__link">Continents <i class="ri-arrow-down-s-line"></i></a>
+                        <ul class="dropdown__menu">
+                            <li><a href="/africa/" class="dropdown__item">Africa</a></li>
+                            <li><a href="/antarctica/" class="dropdown__item">Antarctica</a></li>
+                            <li><a href="/asia/" class="dropdown__item">Asia</a></li>
+                            <li><a href="/australia/" class="dropdown__item">Australia</a></li>
+                            <li><a href="/europe/" class="dropdown__item">Europe</a></li>
+                            <li><a href="/north-america/" class="dropdown__item">North America</a></li>
+                            <li><a href="/south-america/" class="dropdown__item">South America</a></li>
+                        </ul>
+                    </li>
+                     <li class="nav__item"><a href="/india/" class="nav__link">India</a></li>
+                    <li class="nav__item"><a href="/global/" class="nav__link">Global News</a></li>
+                    <li class="nav__item"><a href="/about" class="nav__link active">Portal Team</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
+            </div>
+
+            <div class="nav__actions">
+                <i class="ri-search-line nav__action-btn" id="search-btn"></i>
+                <i class="ri-user-line nav__action-btn" id="login-btn"></i>
+                <i class="ri-moon-line nav__action-btn" id="theme-btn"></i>
+                <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line"></i></div>
+            </div>
+        </nav>
+        <div class="search" id="search">
+            <input type="search" placeholder="Search news on this page..." class="search__input" id="search-input-field">
+        </div>
+    </header>
+
+    <div class="category-bar-container" id="category-container">
+        <div class="category-bar" id="category-bar"></div>
+    </div>
+    
+    <div class="login" id="login">
+        <form class="login__form" id="login-form-popup">
+            <h2 class="login__title">Administrator Login</h2>
+            <i class="ri-close-line login__close" id="login-close"></i>
+            <div class="error-message" id="error-message"></div>
+            <div class="login__group">
+                <input type="email" placeholder="Email" required class="login__input" id="login-email">
+                <input type="password" placeholder="Password" required class="login__input" id="login-password">
+            </div>
+            <button type="submit" class="login__button">Sign In</button>
+        </form>
+    </div>
+
+    <main class="main-container container">
+        <div class="view-toggle-container">
+            <button id="view-toggle-btn" class="btn" style="display: none;">View Older News</button>
+        </div>
+        <section class="news-section">
+            <h1 style="color: var(--title-color); margin-bottom: 2rem; text-align: center;">Asia News</h1>
+            <div id="news-grid" class="news-grid"></div>
+        </section>
+    </main>
+
+    <div id="news-modal" class="modal">
+        <div class="modal-content">
+            <i class="ri-close-line modal-close-button" id="news-modal-close"></i>
+            <h2 id="modal-heading"></h2>
+            <div class="modal-meta">
+                <span id="modal-category"></span> | <span id="modal-timestamp"></span>
+            </div>
+            <img id="modal-image" src="" alt="News Image" class="modal-image" style="display: none;" />
+            <div id="modal-body"></div>
+            <div class="modal-footer">
+                <p id="modal-source"></p>
+                <a href="#" id="modal-link" target="_blank" rel="noopener noreferrer">Read at Source <i class="ri-arrow-right-up-line"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHATBOT HTML -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="chatbot-header">
+            <h3>News Assistant</h3>
+            <div class="search-scope-toggle" id="search-scope-container">
+                <div class="scope-option" id="scope-global">
+                    <i class="ri-global-line" title="Complete News Portal Search"></i>
+                    <label>Portal</label>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="search-scope-toggle">
+                    <span class="slider"></span>
+                </label>
+                <div class="scope-option" id="scope-page">
+                    <i class="ri-file-text-line" title="This Page Only"></i>
+                    <label>Page</label>
+                </div>
+            </div>
+            <i class="ri-close-line" id="chatbot-close-btn"></i>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <!-- Messages will be appended here -->
+        </div>
+        <form class="chatbot-input-form" id="chatbot-form">
+            <input type="text" id="chatbot-input" placeholder="Ask about the news..." autocomplete="off">
+            <button type="submit"><i class="ri-send-plane-fill"></i></button>
+        </form>
+    </div>
+
+    <div class="chatbot-toggle-btn" id="chat-toggle-btn">
+        <i class="ri-question-answer-line"></i>
+    </div>
+    <!-- END CHATBOT HTML -->
+    <footer class="footer">
+        <p><a href="/india">⚡ Developed by Divyansh & Chirag Tomar | </a><a href="/about">⚙️ Maintained by XI-D</a> | <a href="/map">©️ 2025 News Portal Vidyagyan School — All Rights Reserved </a></p>
+    </footer>
+    <script src="/js/continent.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/chatbot.js"></script>
+</body>
+</html>

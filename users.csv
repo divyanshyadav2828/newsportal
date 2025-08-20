@@ -1,0 +1,17 @@
+id,passwordHash,role
+keerti@globalconnect.in,$2b$10$fC7FLqnY3dXLcVCY/KdNH.zkQvHgUGcbK3cZp.H.AGZbi/hcfBl3O,north-america
+pravesh@globalconnect.in,$2b$10$glttrCcfD0ssb6cA.oDTYupymcgBHUbW0nyFZBnNNrTc9rjaCA/DC,south-america
+chaman@globalconnect.in,$2b$10$4SSip7URHkCcGSV4JgScLeaTSQ0IthxmQ91XgtYbrycUWLJsy0K4O,africa
+preet@globalconnect.in,$2b$10$YeQo25.mIuoGHuf2QOaeTeD.WFHbZwsqFDSOolJg.VbiGxRkdbu7.,asia
+krish@globalconnect.in,$2b$10$q1Th6u0Eo/qvVcmqQDZTNen/AHlm/IFKdVUWgfCqQB2ebbllhRFUy,australia
+deeksha@globalconnect.in,$2b$10$WUWTwjyXuVUH5XfVJGAcSu49YE0bhO.o3bMXMH6CJhnx3oNjzG1..,europe
+animesh@asia.com,$2b$10$FFFD/ORX0W7YyodnimkU/O66EbLTmm7jUhAxfhD01LehSryVFnyZe,asia
+animesh@africa.com,$2b$10$Fc.91LA5seredikCnN4QiuljDqJJB5IJJ/9CHx3YF72tO2GMmRgYm,africa
+animesh@europe.com,$2b$10$irB7r4x8Q240ALhLDr1VBOKD5RgLV0ATaBQ8B2H63sFuB3MkpPS5m,europe
+animesh@northamerica.com,$2b$10$Ck5WCI1hD0eZrtBqJZPce.P6dyUgxXaYGrS9I7vqOGsBCDDSsKq9a,north-america
+animesh@southamerica.com,$2b$10$6CKu5eRX.iE/FjnBx8G/NuWMhpj9KtEm7G52CeO3Ygm4NQk371a5m,south-america
+animesh@antarctica.com,$2b$10$CCDaf7pQPANc8oUV3qarsuEhLIEr/R4Vn.X3SiqHyWHjNovvP6xCO,antarctica
+animesh@australia.com,$2b$10$OtwOjvArM.r1KNizRsyjKe/U5pF37xpXV8TJxYYpbiFMEnKDQ1mDG,australia
+animesh@india.com,$2b$10$gVNjJ6CgQlNxc4c4NRIRtuWykcAJMpUhOnbelrQMeFVoTxviGw52a,india
+animesh@global.com,$2b$10$zvGYvECZ4mA8wAAB7mIu9.5OKgXBejZswZmuBVxEq.yzuJR6yJ7Wq,global
+admin@globalconnect.in,$2b$10$DAum2fDtrlnkLRynyOOSqeZEO.YOJd8rAtrMcjpzXCyiH3RpmvmKS,editor

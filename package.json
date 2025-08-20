@@ -1,0 +1,19 @@
+{
+  "name": "digital-desk-fresh-start",
+  "version": "1.0.0",
+  "description": "A news and information portal.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "divyanshyadav2828",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "csv-parse": "^5.5.6",
+    "csv-writer": "^1.6.0",
+    "express": "^4.21.2",
+    "express-session": "^1.18.0",
+    "uuid": "^9.0.0"
+  }
+}

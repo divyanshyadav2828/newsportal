@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .user-list-item { display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-color); padding: 1rem; border-radius: .5rem; }
+        .user-details { display: flex; flex-direction: column; }
+        .user-id { font-weight: 600; color: var(--title-color); }
+        .user-role { font-size: 0.9rem; color: var(--text-color); text-transform: capitalize; }
+        .list-item-actions button { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-color); margin-left: .5rem; }
+        .list-item-actions button:hover { color: var(--title-color); }
+        .widget-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .widget-header .widget-title { margin-bottom: 0; }
+        .modal-info { padding: 1rem; background-color: var(--bg-color); border-radius: .5rem; margin-bottom: 1.5rem; text-align: center; color: var(--title-color); }
+    </style>
+</head>
+<body class="admin-body">
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="/admin.html" class="nav__logo"><i class="ri-arrow-left-line"></i> Back to Dashboard</a>
+            <div class="nav__actions">
+                <button class="btn btn-logout" id="logout-btn">Logout <i class="ri-logout-box-r-line"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container container">
+        <section class="admin-widget">
+            <div class="widget-header">
+                <h2 class="widget-title">Existing Users</h2>
+                <button id="add-user-btn" class="btn btn-primary"><i class="ri-add-line"></i> Add New User</button>
+            </div>
+            <div id="user-list" class="category-list">
+                <!-- User items will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Add User Modal -->
+    <div id="add-user-modal" class="login">
+        <div class="login__form" style="max-width: 500px;">
+            <h2 class="login__title">Add New User</h2>
+            <form id="add-user-form" class="widget-form">
+                <input type="email" id="add-user-email" placeholder="User Email (Login ID)" required>
+                <input type="password" id="add-user-password" placeholder="Password" required>
+                <select id="add-user-role" required>
+                    <option value="" disabled selected>Select a Role</option>
+                    <option value="editor">Main Editor (Global Admin)</option>
+                    <option value="africa">Africa Editor</option>
+                    <option value="asia">Asia Editor</option>
+                    <option value="australia">Australia Editor</option>
+                    <option value="europe">Europe Editor</option>
+                    <option value="north-america">North America Editor</option>
+                    <option value="south-america">South America Editor</option>
+                    <option value="global">Global News Editor</option>
+                    <option value="india">India Editor</option>
+                    <option value="antarctica">Antarctica Editor</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Create User</button>
+            </form>
+            <i class="ri-close-line login__close" data-modal="add"></i>
+        </div>
+    </div>
+
+    <!-- Change Role Modal -->
+    <div id="change-role-modal" class="login">
+        <div class="login__form" style="max-width: 500px;">
+            <h2 class="login__title">Change User Role</h2>
+            <div id="change-role-user-info" class="modal-info"></div>
+            <form id="change-role-form" class="widget-form">
+                <input type="hidden" id="change-role-user-id">
+                <select id="change-role-select" required>
+                    <option value="editor">Main Editor (Global Admin)</option>
+                    <option value="africa">Africa Editor</option>
+                    <option value="asia">Asia Editor</option>
+                    <option value="australia">Australia Editor</option>
+                    <option value="europe">Europe Editor</option>
+                    <option value="north-america">North America Editor</option>
+                    <option value="south-america">South America Editor</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Save Role</button>
+            </form>
+            <i class="ri-close-line login__close" data-modal="role"></i>
+        </div>
+    </div>
+    
+    <!-- Change Password Modal -->
+    <div id="change-password-modal" class="login">
+        <div class="login__form" style="max-width: 500px;">
+            <h2 class="login__title">Change Password</h2>
+            <div id="change-password-user-info" class="modal-info"></div>
+            <form id="change-password-form" class="widget-form">
+                <input type="hidden" id="change-password-user-id">
+                <input type="password" id="new-password-input" placeholder="Enter new password" required>
+                <button type="submit" class="btn btn-primary">Update Password</button>
+            </form>
+            <i class="ri-close-line login__close" data-modal="password"></i>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-confirm-modal" class="login">
+        <div class="login__form" style="max-width: 400px;">
+            <h2 class="login__title">Confirm Deletion</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem;">Are you sure you want to permanently delete this user?</p>
+            <div id="delete-user-info" class="modal-info"></div>
+            <div class="form-buttons" style="justify-content: center;">
+                <button id="confirm-delete-btn" class="btn btn-logout">Yes, Delete User</button>
+                <button id="cancel-delete-btn" class="btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/usermanagement.js"></script>
+    <script src="./js/admin-header.js"></script>
+</body>
+</html>

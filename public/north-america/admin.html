@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North America - Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="admin-body" data-continent="north-america">
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="/north-america/admin.html" class="nav__logo"><i class="ri-settings-3-line"></i> North America Admin</a>
+            <div class="nav__actions">
+                <button class="btn btn-logout" id="logout-btn">Logout <i class="ri-logout-box-r-line"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container container">
+        <div class="admin-grid">
+            <div class="admin-column">
+                <section class="admin-widget">
+                    <h2 class="widget-title" id="form-title">Add New Article</h2>
+                    <form id="news-form" class="widget-form">
+                        <input type="hidden" id="news-id-input">
+                        <input type="text" id="news-heading-input" placeholder="News Heading" required>
+                        <select id="news-category-select" required></select>
+                        <select id="news-status-select" required>
+                            <option value="latest" selected>Latest News</option>
+                            <option value="older">Older News</option>
+                        </select>
+                        <textarea id="news-content-input" placeholder="Full news content..." rows="6" required></textarea>
+                        <input type="text" id="news-source-input" placeholder="Source (e.g., 'Portal Team')">
+                        <input type="url" id="news-website-link-input" placeholder="https://example.com (optional)">
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary">Save Article</button>
+                            <button type="button" id="clear-form-btn" class="btn">Clear Form</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="admin-widget">
+                    <h2 class="widget-title">Existing Articles</h2>
+                    <div id="news-list" class="news-list"></div>
+                </section>
+            </div>
+            <div class="admin-column">
+                <section class="admin-widget">
+                    <h2 class="widget-title">Manage Categories</h2>
+                    <form id="category-form" class="widget-form">
+                        <input type="text" id="new-category-input" placeholder="New category name" required>
+                        <button type="submit" class="btn btn-primary">Add Category</button>
+                    </form>
+                    <div id="category-list" class="category-list"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/continent-admin.js"></script>
+    <script src="/js/admin-header.js"></script>
+</body>
+</html>
